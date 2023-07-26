@@ -5,7 +5,7 @@ import docx2txt
 import os
 import xlsxwriter as xw
 
-folder= os.listdir(r"C:\Users\yunus\Desktop\All")
+folder= os.listdir("")
 
 workbook = xw.Workbook('form_benzerlik_oranları.xlsx')
 worksheet = workbook.add_worksheet()
@@ -19,8 +19,8 @@ for w in range (len(folder)):
     for q in range (w+1,len(folder)):
         
         try:
-            sentence_1 = docx2txt.process(str(r"C:\Users\yunus\Desktop\All\\")+str(folder[w]))
-            sentence_2 = docx2txt.process(str(r"C:\Users\yunus\Desktop\All\\")+str(folder[q]))
+            sentence_1 = docx2txt.process(str("\\")+str(folder[w]))
+            sentence_2 = docx2txt.process(str("\")+str(folder[q]))
             
             def tokenizer(text):
                 text_nopunct = "".join([char for char in text if char not in string.punctuation])
